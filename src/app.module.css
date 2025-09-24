@@ -1,8 +1,48 @@
+:root {
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --header-h1-color: #222222;
+  --section-background: #f0f2f5;
+  --section-border: #e0e0e0;
+  --section-h2-color: #444444;
+  --link-item-background: #007bff;
+  --link-item-text: #ffffff;
+  --link-item-hover-background: #0056b3;
+  --product-card-background: #ffffff;
+  --product-card-shadow: rgba(0, 0, 0, 0.15);
+  --product-card-hover-shadow: rgba(0, 0, 0, 0.2);
+  --product-title-color: #007bff;
+  --product-desc-color: #666666;
+}
+
+[data-theme='dark'] {
+  --background-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --header-h1-color: #f5f5f5;
+  --section-background: #2a2a2a;
+  --section-border: #3a3a3a;
+  --section-h2-color: #cccccc;
+  --link-item-background: #6200ea;
+  --link-item-text: #ffffff;
+  --link-item-hover-background: #3700b3;
+  --product-card-background: #333333;
+  --product-card-shadow: rgba(0, 0, 0, 0.3);
+  --product-card-hover-shadow: rgba(0, 0, 0, 0.4);
+  --product-title-color: #bb86fc;
+  --product-desc-color: #b0b0b0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .container {
   max-width: 960px;
   margin: 0 auto;
   padding: 20px;
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .header {
@@ -11,8 +51,9 @@
 }
 
 .header h1 {
-  font-size: 2.5em;
-  color: #333;
+  font-size: 3em;
+  color: var(--header-h1-color);
+  letter-spacing: 1px;
 }
 
 .main {
@@ -22,71 +63,80 @@
 }
 
 .linksSection, .productsSection {
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--section-background);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--section-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .linksSection h2, .productsSection h2 {
-  font-size: 1.8em;
-  color: #555;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 10px;
+  font-size: 2em;
+  color: var(--section-h2-color);
+  margin-bottom: 25px;
+  border-bottom: 2px solid var(--section-border);
+  padding-bottom: 12px;
+  text-align: center;
 }
 
 .linksGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  justify-content: center;
+  gap: 20px;
 }
 
 .linkItem {
-  display: inline-block;
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: var(--link-item-background);
+  color: var(--link-item-text);
   text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 600;
+  font-size: 1.1em;
 }
 
 .linkItem:hover {
-  background-color: #0056b3;
+  background-color: var(--link-item-hover-background);
+  transform: translateY(-3px);
 }
 
 .productsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 25px;
 }
 
 .productCard {
   display: block;
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  background-color: var(--product-card-background);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--product-card-shadow);
   text-decoration: none;
   color: inherit;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .productCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px var(--product-card-hover-shadow);
 }
 
 .productTitle {
-  font-size: 1.3em;
-  color: #007bff;
-  margin-bottom: 10px;
-  font-weight: bold;
+  font-size: 1.4em;
+  color: var(--product-title-color);
+  margin-bottom: 12px;
+  font-weight: 700;
 }
 
 .productDesc {
-  font-size: 0.9em;
-  color: #666;
-  line-height: 1.5;
+  font-size: 0.95em;
+  color: var(--product-desc-color);
+  line-height: 1.6;
 }

@@ -1,4 +1,5 @@
 import style from "./app.module.css"
+import { FaBluesky, FaGithub } from "react-icons/fa6";
 
 export function App() {
 	return (
@@ -16,10 +17,12 @@ export function App() {
 							rel="noreferrer noopener"
 							className={style.linkItem}
 						>
-							Bluesky
+							<FaBluesky size={24} />
+							<span>Bluesky</span>
 						</a>
 						<a href="https://github.com/tomo-x7/" className={style.linkItem}>
-							Github
+							<FaGithub size={24} />
+							<span>Github</span>
 						</a>
 					</div>
 				</section>
